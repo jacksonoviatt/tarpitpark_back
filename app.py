@@ -32,9 +32,7 @@ def get_iceage():
         return Response("DB Error, Sorry", mimetype="text/plain", status=500)
     else:
         for iceage in iceage_result:
-        # user_results = [{'userId': user_result[i][0], 'email': user_result[0][1], 'username': user_result[0][2], 'bio': user_result[0][3], 'birthdate': user_result[0][4], 'image_url': user_result[0][5], 'bannerUrl': user_result[0][6]}]
-            iceage_result = {'name': iceage[0], 'introText': iceage[1], 'diet': iceage[2], 'size': iceage[3], 'habitat': iceage[4], 'era': iceage[5], 'photo1': iceage[6], 'desc1': iceage[7], 'photo2': iceage[8], 'desc2': iceage[9], 'photo3': iceage[10], 'desc3': iceage[11], 'id': iceage[12]} 
-            # iceage_list.append(iceage_result)
+          iceage_result = {'name': iceage[0], 'introText': iceage[1], 'diet': iceage[2], 'size': iceage[3], 'habitat': iceage[4], 'era': iceage[5], 'photo1': iceage[6], 'desc1': iceage[7], 'photo2': iceage[8], 'desc2': iceage[9], 'photo3': iceage[10], 'desc3': iceage[11], 'id': iceage[12]} 
         iceage_json = json.dumps(iceage_result, default=str)
         return Response(iceage_json, mimetype="application/json", status=201)
 
